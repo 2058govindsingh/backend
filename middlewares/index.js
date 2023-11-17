@@ -5,7 +5,9 @@ function logRequestResponse(filename) {
         fs.appendFile(
             filename,
             `\n${Date.now()}: ${req.method} : ${req.path}`,
-            err => {}
+            (err, data) => {
+                next();
+            }
           )
     }
 }

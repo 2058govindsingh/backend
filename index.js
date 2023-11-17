@@ -1,5 +1,5 @@
 const express = require('express')
-const { logRequestResponse } = require("./middlewares/")
+const { logRequestResponse } = require("./middlewares")
 const { connectMongoDB } = require('./connection')
 const userRouter = require('./routes/user')
 
@@ -16,9 +16,6 @@ app.use(express.urlencoded({ extended: false }))
 app.use(logRequestResponse('log.txt'));
 
 // Routes
-app.use('/ping', (req, res) => {
-    return res.status(200).json({msg : "pong"});
-})
 app.use("/api/users", userRouter);
 
 app.listen(PORT, () => console.log('Server started at PORT', PORT))

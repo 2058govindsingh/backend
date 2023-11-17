@@ -2,7 +2,6 @@ const User = require('../models/User')
 
 async function handleGetAllUsers (req, res) {
   const allDBUsers = await User.find({})
-  console.log("fine");
   res.setHeader('X-MyName', 'Govind Singh') // Custom Header
   return res.json(allDBUsers)
 }
