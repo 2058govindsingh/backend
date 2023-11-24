@@ -15,5 +15,5 @@ const router = express.Router();
     .get(handleGetUserById)
     .patch(handleUpdateUserById)
     .delete(handleDeleteUserById)
-
+  
 module.exports = router 
